@@ -1,0 +1,13 @@
+.ropreproject
+.vscode
+*.pdf
+*.txt
+*.pyproject
+*.pyproject.user
+*.conf
+*.ipynb
+__pycache__
+venv*
+dist
+build
+*.spec
