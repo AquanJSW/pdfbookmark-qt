@@ -18,7 +18,7 @@ ApplicationWindow {
         Menu {
             title: qsTr("&File")
             Action {
-                text: qsTr("&Read From")
+                text: qsTr("&Read From...")
                 onTriggered: fileDialog_r.open()
             }
         }
@@ -132,6 +132,12 @@ ApplicationWindow {
                 anchors.fill: parent
                 onTextChanged: enableWriting()
             }
+        }
+    }
+    Shortcut {
+        sequences: [StandardKey.Close]
+        onActivated: {
+            close()
         }
     }
 

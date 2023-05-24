@@ -55,6 +55,7 @@ class PDFBookmark(QObject):
                     + str(self.__reader.get_destination_page_number(dst))
                     + '\n'
                 )
+        result = result.replace('\x00', '')
         return result
 
     @Slot(str, str, int, result=bool)
