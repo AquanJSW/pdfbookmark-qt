@@ -83,6 +83,8 @@ ApplicationWindow {
                 currentFolder: StandardPaths.standardLocations(
                                    StandardPaths.HomeLocation)[0]
                 nameFilters: ["PDF files (*.pdf)"]
+                fileMode: FileDialog.SaveFile
+                selectedFile: getFilenameForWriteDialog(textEdit_b.text)
                 onAccepted: {
                     textEdit_w.text = cvtFileURL2Path(selectedFile)
                 }
@@ -197,5 +199,9 @@ ApplicationWindow {
             writeButton.enabled = true
         else
             writeButton.enabled = false
+    }
+    function getFilenameForWriteDialog(inputFileUrl) {
+        let basename = inputFileUrl.split('/').pop().split('.')[0]
+        return basename + '-out.pdf'
     }
 }
